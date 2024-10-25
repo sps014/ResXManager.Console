@@ -1,0 +1,3 @@
+[submodule "Vendor/ResXResourceManager"]
+	path = Vendor/ResXResourceManager
+	url = https://github.com/dotnet/ResXResourceManager.git
