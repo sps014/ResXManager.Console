@@ -9,11 +9,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Vendor\ResXResourceManager\src\ResXManager.Scripting\ResXManager.Scripting.csproj" />
+    <ProjectReference Include="..\..\Vendor\ResXResourceManager\src\ResXManager.Model\ResXManager.Model.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Spectre.Console" Version="0.49.1" />
     <PackageReference Include="Spectre.Console.Cli" Version="0.49.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>
