@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ResxManager.Console": {
+      "commandName": "Project",
+      "commandLineArgs": "export-diff \"C:\\SVN\\LenzeEngineering_1.27\\Implementation\" \"C:\\Users\\singhsh\\Downloads\\2024_09_30.snapshot\" "
+    }
+  }
+}

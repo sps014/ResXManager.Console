@@ -4,15 +4,25 @@ using Spectre.Console.Cli;
 
 namespace ResXManager.Console.Commands;
 
-public class LoadFolderCommand : Command
+public class LoadFolderCommand : Command<LoadFolderCommand.LoadFolderSettings>
 {
-    public Scripting.Host? Host { get; private set; }
-    public override int Execute(CommandContext context)
+    public class LoadFolderSettings : CommandSettings
     {
-        var folderPath = AnsiConsole
-            .Prompt(new TextPrompt<string>("[yellow]Please write the folder path for all resource files[/].:"))
-            .Trim();
+        [CommandArgument(0, "[FolderPath]")]
+        public string? FolderPath { get; set; }
+    }
 
+    public Scripting.Host? Host { get; private set; }
+    public override int Execute(CommandContext context, LoadFolderSettings settings)
+    {
+        var folderPath = settings.FolderPath;
+
+        if (folderPath == null)
+        {
+            AnsiConsole
+               .Prompt(new TextPrompt<string>("[yellow]Please write the folder path for all resource files[/].:"))
+               .Trim();
+        }
 
         if (string.IsNullOrWhiteSpace(folderPath) || !Directory.Exists(folderPath))
         {
